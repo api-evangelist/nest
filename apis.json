@@ -1,0 +1,60 @@
+{
+    "name": "Nest",
+    "description": "Discover connected home devices from Nest \u2013 thermostats, indoor and outdoor security cameras, smoke and carbon monoxide alarm, security system, video doorbell and more.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1858-nest.jpg",
+    "tags": [
+        "api provider",
+        "automation",
+        "buildings",
+        "have api",
+        "internet of things",
+        "thermostats"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/nest\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Nest",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1858-nest.jpg",
+            "humanURL": "http:\/\/nest.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/nest-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "http:\/\/nest.com\/blog\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/nest.com\/feed.rss"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/nest-labs"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/nest-labs"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/nest"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/nest.com\/"
+        }
+    ]
+}
