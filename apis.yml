@@ -1,25 +1,128 @@
 aid: nest
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/nest.png
 name: Nest
-description: 'Nest is a company surfaced as a portfolio company of lightspeed-venture-partners and added
-  to the API Evangelist network as a stub for enrichment. Sector: hardware. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Nest is Google's smart home brand — thermostats, cameras, doorbells, and the
+  Nest Hub — originally founded as Nest Labs (a Lightspeed Venture Partners
+  portfolio company) and acquired by Google. Developers integrate with authorized
+  Nest devices through the Google Nest Device Access program and its Smart Device
+  Management (SDM) API, a Google Cloud REST API authorized with Google OAuth 2.0.
+  The API lets partner apps list structures, rooms, and devices, read device
+  traits (temperature, humidity, camera, doorbell), and execute trait commands,
+  with asynchronous device events delivered via Google Cloud Pub/Sub. The legacy
+  "Works with Nest" API was retired and superseded by Device Access.
 url: https://raw.githubusercontent.com/api-evangelist/nest/refs/heads/main/apis.yml
 x-type: company
 x-source: lightspeed-venture-partners-portfolio
-x-tier: stub
+x-tier: enriched
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 16
+  pass: local-v1
 tags:
 - Company
 - Hardware
-apis: []
+- Smart Home
+- IoT
+- Home Automation
+- Thermostat
+- Google
+- Device Access
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Smart Device Management (SDM) API
+  description: >-
+    Google Nest Device Access REST API for accessing, controlling, and managing
+    authorized Nest devices (thermostats, cameras, doorbells, Hub Max) via
+    enterprises/structures/rooms/devices resources and a device executeCommand
+    method.
+  humanURL: https://developers.google.com/nest/device-access
+  baseURL: https://smartdevicemanagement.googleapis.com
+  properties:
+  - type: Documentation
+    url: https://developers.google.com/nest/device-access
+  - type: APIReference
+    url: https://developers.google.com/nest/device-access/reference/rest
+  - type: GettingStarted
+    url: https://developers.google.com/nest/device-access/get-started
+  - type: Authentication
+    url: authentication/nest-authentication.yml
 common:
+- type: DomainSecurity
+  url: security/nest-domain-security.yml
 - type: Website
   url: https://nest.com
+- type: DeveloperPortal
+  url: https://developers.google.com/nest/device-access
+- type: Documentation
+  url: https://developers.google.com/nest/device-access
+- type: APIReference
+  url: https://developers.google.com/nest/device-access/reference/rest
+- type: GettingStarted
+  url: https://developers.google.com/nest/device-access/registration
+- type: Support
+  url: https://developers.google.com/nest/device-access/support
+- type: SignUp
+  url: https://console.nest.google.com/device-access
+- type: Pricing
+  url: https://developers.google.com/nest/device-access/registration
+- type: TermsOfService
+  url: https://developers.google.com/terms/
+- type: PrivacyPolicy
+  url: https://policies.google.com/privacy
+- type: StatusPage
+  url: https://status.cloud.google.com/
+- type: Authentication
+  url: authentication/nest-authentication.yml
+- type: OAuthScopes
+  url: scopes/nest-scopes.yml
+- type: Conventions
+  url: conventions/nest-conventions.yml
+- type: ErrorCatalog
+  url: errors/nest-problem-types.yml
+- type: DataModel
+  url: data-model/nest-data-model.yml
+- type: Lifecycle
+  url: lifecycle/nest-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/nest-lifecycle.yml
+- type: Conformance
+  url: conformance/nest-conformance.yml
+- type: MCPServer
+  url: mcp/nest-mcp.yml
+- type: Packages
+  url: packages/nest-packages.yml
+- type: SDKs
+  url: packages/nest-packages.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Webhooks
+  url: asyncapi/nest-events.yml
+- type: LLMsTxt
+  url: llms/nest-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 0
+  pass: local-v1
