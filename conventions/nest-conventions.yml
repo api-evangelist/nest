@@ -1,0 +1,42 @@
+generated: '2026-07-20'
+method: searched
+source: https://developers.google.com/nest/device-access/reference/rest
+authentication:
+  style: oauth2-bearer
+  detail: 'Google OAuth 2.0 access token in Authorization: Bearer <token> header'
+  ref: authentication/nest-authentication.yml
+base_url: https://smartdevicemanagement.googleapis.com
+media_type: application/json
+resource_model:
+  style: resource-oriented (Google AIP)
+  hierarchy: enterprises/{project-id}/structures/{structure}/rooms/{room}; enterprises/{project-id}/devices/{device}
+pagination:
+  style: page-token
+  request_params: [pageSize, pageToken]
+  response_fields: [nextPageToken]
+  note: Standard Google API list pagination (AIP-158)
+custom_methods:
+  style: colon-suffixed custom verbs
+  example: 'POST /v1/{name=enterprises/*/devices/*}:executeCommand'
+device_traits:
+  note: >-
+    Device state and capabilities are modeled as "traits" (e.g.
+    sdm.devices.traits.ThermostatTemperatureSetpoint); commands are issued by
+    trait command name in executeCommand.
+  ref: https://developers.google.com/nest/device-access/traits
+error_envelope:
+  shape: google.rpc.Status
+  fields: [error.code, error.message, error.status, error.details]
+  ref: errors/nest-problem-types.yml
+idempotency:
+  supported: false
+  note: >-
+    The SDM API does not document an idempotency-key mechanism. Reads are
+    naturally idempotent; executeCommand is not guarded by a client idempotency key.
+rate_limit_signaling:
+  note: >-
+    SDM enforces per-project quotas (Google Cloud quota system). Quota/limit
+    signaling follows Google API standard 429 RESOURCE_EXHAUSTED errors rather
+    than X-RateLimit headers.
+versioning:
+  ref: lifecycle/nest-lifecycle.yml

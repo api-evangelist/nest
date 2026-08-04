@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://developers.google.com/nest/device-access/authorize
+docs: https://developers.google.com/nest/device-access/authorize
+schemes:
+  - name: GoogleOAuth2
+    source: https://developers.google.com/nest/device-access/authorize
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://nestservices.google.com/partnerconnections/{project-id}/auth
+        tokenUrl: https://www.googleapis.com/token
+scopes:
+  - scope: https://www.googleapis.com/auth/sdm.service
+    description: >-
+      Single coarse-grained scope granting the Smart Device Management API access
+      to view, control, and manage the Nest devices the user has authorized for
+      the Device Access project. Per-device and per-trait consent is chosen by the
+      end user in the Partner Connections Manager flow rather than through
+      additional OAuth scopes.
+    flows: [authorizationCode]
+    sources: [https://developers.google.com/nest/device-access/authorize]
+notes: >-
+  The SDM API exposes exactly one OAuth scope. Granular authorization is expressed
+  through the device/trait selections the user makes at consent time, not through
+  a scope hierarchy.

@@ -1,0 +1,12 @@
+generated: '2026-07-20'
+method: generated
+source: https://developers.google.com/nest/device-access/reference/rest
+skills:
+  - file: nest-list-devices.md
+    name: List and read Nest devices
+    api: Smart Device Management (SDM) API
+    operations: [enterprises.devices.list, enterprises.devices.get, enterprises.structures.list]
+  - file: nest-control-thermostat.md
+    name: Control a Nest thermostat
+    api: Smart Device Management (SDM) API
+    operations: [enterprises.devices.get, enterprises.devices.executeCommand]

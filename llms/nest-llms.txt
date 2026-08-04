@@ -1,0 +1,45 @@
+# Nest (Google Nest) — Smart Device Management API
+
+> Nest is Google's smart home brand (thermostats, cameras, doorbells, and the
+> Nest Hub). Developers access authorized Nest devices through the Google Nest
+> Device Access program and its Smart Device Management (SDM) REST API, a Google
+> Cloud API authorized with Google OAuth 2.0.
+
+## API
+- Smart Device Management (SDM) API: https://developers.google.com/nest/device-access/reference/rest
+- Service endpoint: https://smartdevicemanagement.googleapis.com (v1)
+- Discovery document: https://smartdevicemanagement.googleapis.com/$discovery/rest?version=v1
+
+## Getting started
+- Device Access overview: https://developers.google.com/nest/device-access
+- Registration: https://developers.google.com/nest/device-access/registration
+- Device Access Console: https://console.nest.google.com/device-access
+- Authorize (OAuth 2.0): https://developers.google.com/nest/device-access/authorize
+- Traits reference: https://developers.google.com/nest/device-access/traits
+- Subscribe to events (Pub/Sub): https://developers.google.com/nest/device-access/subscribe-to-events
+- Support: https://developers.google.com/nest/device-access/support
+
+## Operations
+- List devices: GET /v1/enterprises/{project-id}/devices
+- Get device: GET /v1/enterprises/{project-id}/devices/{device-id}
+- Execute command: POST /v1/enterprises/{project-id}/devices/{device-id}:executeCommand
+- List structures: GET /v1/enterprises/{project-id}/structures
+- Get structure: GET /v1/enterprises/{project-id}/structures/{structure-id}
+- List rooms: GET /v1/enterprises/{project-id}/structures/{structure-id}/rooms
+- Get room: GET /v1/enterprises/{project-id}/structures/{structure-id}/rooms/{room-id}
+
+## Auth
+- OAuth 2.0 authorization code flow (Google)
+- Scope: https://www.googleapis.com/auth/sdm.service
+
+## Repo artifacts
+- authentication/nest-authentication.yml
+- scopes/nest-scopes.yml
+- conventions/nest-conventions.yml
+- errors/nest-problem-types.yml
+- data-model/nest-data-model.yml
+- lifecycle/nest-lifecycle.yml
+- mcp/nest-mcp.yml
+- skills/_index.yml
+- packages/nest-packages.yml
+- asyncapi/nest-events.yml

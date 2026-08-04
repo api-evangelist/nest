@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://developers.google.com/nest/device-access/reference/rest
+note: >-
+  The Smart Device Management API is a Google discovery-based REST API. Google
+  does not ship a Nest-branded SDK; instead the SDM reference directs developers
+  to Google's official multi-API client libraries, which support SDM out of the
+  discovery document. These are first-party Google libraries (official: true)
+  but are generic Google API clients, not Nest-specific.
+packages:
+  - language: python
+    registry: pypi
+    name: google-api-python-client
+    url: https://pypi.org/project/google-api-python-client/
+    install: pip install google-api-python-client
+    official: true
+    note: Access via build('smartdevicemanagement', 'v1', credentials=...)
+  - language: javascript
+    registry: npm
+    name: googleapis
+    url: https://www.npmjs.com/package/googleapis
+    install: npm install googleapis
+    official: true
+    note: google.smartdevicemanagement('v1')
+  - language: go
+    registry: pkg.go.dev
+    name: google.golang.org/api/smartdevicemanagement/v1
+    url: https://pkg.go.dev/google.golang.org/api/smartdevicemanagement/v1
+    install: go get google.golang.org/api/smartdevicemanagement/v1
+    official: true
+  - language: java
+    registry: maven
+    name: com.google.api-client:google-api-client
+    url: https://central.sonatype.com/artifact/com.google.api-client/google-api-client
+    install: 'implementation ''com.google.api-client:google-api-client'''
+    official: true
+    note: Generic Google API client used with the SDM discovery document

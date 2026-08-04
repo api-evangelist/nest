@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: https://developers.google.com/nest/device-access
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://developers.google.com/nest/device-access/reference/rest
+history:
+  - note: >-
+      The original "Works with Nest" developer program (developers.nest.com) was
+      retired by Google. It stopped accepting new connections on 2019-08-31 and
+      the legacy Nest API was fully shut down in 2020, superseded by the Device
+      Access program and the Smart Device Management (SDM) API.
+    source: https://developers.google.com/nest/device-access/migration-guide
+deprecation:
+  policy_url: https://developers.google.com/nest/device-access/release-notes
+  notes: >-
+    As a Google Cloud API, SDM follows Google's deprecation practices; changes
+    are announced via the Device Access release notes. No RFC 8594 Sunset header
+    contract is documented.
+status_page: https://status.cloud.google.com/
+sla:
+  url: https://developers.google.com/nest/device-access/commercial-tier
+  notes: >-
+    Commercial-tier partners operate under Device Access commercial terms; no
+    numeric public uptime SLA is published for the individual/sandbox tier.
+deprecated_operations: []

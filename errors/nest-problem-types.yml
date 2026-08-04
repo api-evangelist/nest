@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: derived
+format: google-rpc-status
+source: https://developers.google.com/nest/device-access/reference/rest
+envelope:
+  shape: '{"error": {"code": <int>, "message": <string>, "status": <CANONICAL_CODE>, "details": [...]}}'
+  note: >-
+    SDM uses the standard Google API error model (google.rpc.Status), not
+    RFC 9457 application/problem+json. HTTP status maps to a canonical error
+    code string (e.g. 404 -> NOT_FOUND).
+problems:
+  - status: 400
+    code: INVALID_ARGUMENT
+    title: Malformed request
+    remediation: Check request body / trait command name and parameters
+  - status: 401
+    code: UNAUTHENTICATED
+    title: Missing or invalid OAuth access token
+    remediation: Refresh the Google OAuth 2.0 access token; ensure scope sdm.service was granted
+  - status: 403
+    code: PERMISSION_DENIED
+    title: Caller lacks permission or the device/trait was not authorized
+    remediation: Verify the user authorized the device in the Partner Connections flow and the Device Access project is enabled
+  - status: 404
+    code: NOT_FOUND
+    title: Enterprise, structure, room, or device not found
+    remediation: Verify the resource name path (enterprises/{project-id}/devices/{device})
+  - status: 429
+    code: RESOURCE_EXHAUSTED
+    title: Per-project quota exceeded
+    remediation: Back off and retry; request additional quota if sustained
+  - status: 500
+    code: INTERNAL
+    title: Internal server error
+    remediation: Retry with exponential backoff
+  - status: 503
+    code: UNAVAILABLE
+    title: Service temporarily unavailable
+    remediation: Retry with exponential backoff

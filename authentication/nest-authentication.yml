@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: https://developers.google.com/nest/device-access/authorize
+docs: https://developers.google.com/nest/device-access/authorize
+summary:
+  types: [oauth2]
+  oauth2_flows: [authorizationCode]
+  notes: >-
+    The Nest Smart Device Management (SDM) API is a Google Cloud API and is
+    authorized exclusively with Google OAuth 2.0 (authorization code flow).
+    A Device Access project (created in the Device Access Console) plus a
+    Google Cloud OAuth 2.0 client ID are required. End users grant access to
+    their Nest devices through the Partner Connections Manager consent screen.
+schemes:
+  - name: GoogleOAuth2
+    type: oauth2
+    flow: authorizationCode
+    authorizationUrl: https://nestservices.google.com/partnerconnections/{project-id}/auth
+    tokenUrl: https://www.googleapis.com/token
+    scopes:
+      - scope: https://www.googleapis.com/auth/sdm.service
+        description: Access, control and manage the user's authorized Nest devices via the SDM API
+    sources: [https://developers.google.com/nest/device-access/authorize]
+    notes: >-
+      Authorization uses Google's Partner Connections Manager URL (scoped to the
+      Device Access project id) rather than the generic accounts.google.com
+      consent screen. Access tokens are Google OAuth bearer tokens presented as
+      `Authorization: Bearer <token>` against https://smartdevicemanagement.googleapis.com.

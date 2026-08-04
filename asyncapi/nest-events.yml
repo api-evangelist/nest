@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://developers.google.com/nest/device-access/subscribe-to-events
+spec_type: Webhooks
+transport: google-cloud-pubsub
+summary: >-
+  The Smart Device Management API delivers device and structure events
+  asynchronously through a Google Cloud Pub/Sub topic tied to the Device Access
+  project, rather than through HTTP callback webhooks. Partners create a Pub/Sub
+  subscription to receive events. This is the provider's event surface.
+delivery:
+  mechanism: Google Cloud Pub/Sub subscription
+  enablement: Enable Pub/Sub events for the Device Access project and subscribe to the project's topic
+event_families:
+  - name: trait events
+    description: Device trait value changes (e.g. temperature setpoint, humidity, connectivity, camera/doorbell events)
+    resource: enterprises/{project-id}/devices/{device-id}
+  - name: relation events
+    description: Structure/room/device relationship changes (device added or removed from a structure)
+notes: >-
+  Camera and doorbell media events (motion, person, sound, chime) are delivered
+  as trait events with short-lived media references. No AsyncAPI document is
+  published by the provider; this artifact captures the documented event surface.

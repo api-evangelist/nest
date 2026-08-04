@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: derived
+source: https://developers.google.com/nest/device-access/reference/rest
+entities:
+  - name: Enterprise
+    description: A Device Access project; the root resource (enterprises/{project-id})
+    id_form: enterprises/{project-id}
+  - name: Structure
+    description: A home / building associated with the enterprise
+    id_form: enterprises/{project-id}/structures/{structure-id}
+  - name: Room
+    description: A room within a structure
+    id_form: enterprises/{project-id}/structures/{structure-id}/rooms/{room-id}
+  - name: Device
+    description: A Nest device (Thermostat, Cam, Doorbell, Hub Max) exposing traits
+    id_form: enterprises/{project-id}/devices/{device-id}
+relationships:
+  - from: Structure
+    to: Enterprise
+    type: belongs_to
+    via: parent (enterprises/{project-id})
+  - from: Room
+    to: Structure
+    type: belongs_to
+    via: parent (structures/{structure-id})
+  - from: Device
+    to: Enterprise
+    type: belongs_to
+    via: parent (enterprises/{project-id})
+  - from: Device
+    to: Room
+    type: has_one
+    via: sdm.devices.traits.Info / assignee room relation
+notes: >-
+  Devices carry "traits" (sdm.devices.traits.*) describing capabilities and
+  state (temperature, humidity, connectivity, camera, doorbell). Traits are
+  read on the device resource and mutated via executeCommand.

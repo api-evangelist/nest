@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://developers.google.com/nest/device-access/reference/rest
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: Authorization is Google OAuth 2.0 authorization-code flow with scope https://www.googleapis.com/auth/sdm.service
+  - id: oidc
+    conforms: true
+    evidence: Google Identity / OAuth 2.0 endpoints back the consent flow (accounts.google.com OIDC provider)
+  - id: google-api-design-aip
+    conforms: true
+    evidence: Resource-oriented design (enterprises/*/structures/*/rooms/*, enterprises/*/devices/*), list pagination (pageSize/pageToken/nextPageToken), and custom method :executeCommand follow Google API Improvement Proposals
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use the Google API error model (google.rpc.Status envelope) rather than application/problem+json
+  - id: fhir-r4
+    conforms: false
+  - id: fapi
+    conforms: false
+  - id: scim
+    conforms: false

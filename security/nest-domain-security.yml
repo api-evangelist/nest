@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: nest.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 10 11:53:42 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: developers.google.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 21 08:37:24 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+- host: smartdevicemanagement.googleapis.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 21 08:39:19 2026 GMT
+  hsts: null
+domains:
+- domain: nest.com
+  dnssec: false
+  caa:
+  - 0 issue "pki.goog"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: google.com
+  dnssec: false
+  caa:
+  - 0 issue "pki.goog"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

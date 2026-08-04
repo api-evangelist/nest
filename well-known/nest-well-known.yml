@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: searched
+hosts:
+  - host: https://nest.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        valid: false
+        note: Returns text/html SPA shell (soft-404), not an RFC 9116 security.txt
+      - path: /.well-known/openid-configuration
+        status: 200
+        valid: false
+        note: Returns text/html SPA shell (soft-404), not OIDC discovery JSON
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        valid: false
+        note: soft-404 HTML
+      - path: /.well-known/api-catalog
+        status: 200
+        valid: false
+        note: soft-404 HTML
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        valid: false
+        note: soft-404 HTML
+notes: >-
+  The consumer domain nest.com returns HTTP 200 with the marketing-site HTML SPA
+  shell for every /.well-known/ path (a catch-all soft-404), so none of these are
+  valid well-known documents — confirmed by content-type text/html and by the
+  security-programs probe finding no security.txt Policy/Contact fields. The SDM
+  API host (smartdevicemanagement.googleapis.com) is a Google Cloud API endpoint;
+  its machine-readable description is published as a Google Discovery document at
+  https://smartdevicemanagement.googleapis.com/$discovery/rest?version=v1 rather
+  than via /.well-known/. No valid well-known catalog was captured, so no
+  WellKnown or SecurityTxt pointer is wired.
