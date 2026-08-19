@@ -5,30 +5,34 @@ source: https://developers.google.com/nest/device-access/reference/rest
 server:
   name: nest-sdm
   transport: http
-  note: >-
-    No official first-party MCP server is published by Google for the Smart
-    Device Management API as of this pass. This is a DERIVED candidate tool
-    list mapped one-to-one from the SDM REST methods, for agent builders who
-    wrap the API themselves.
+  note: No official first-party MCP server is published by Google for the Smart Device Management API
+    as of this pass. This is a DERIVED candidate tool list mapped one-to-one from the SDM REST methods,
+    for agent builders who wrap the API themselves.
 tools:
-  - name: list_devices
-    description: List the Nest devices in an enterprise (Device Access project)
-    source_operation: enterprises.devices.list (GET /v1/{parent=enterprises/*}/devices)
-  - name: get_device
-    description: Get a single Nest device including its traits
-    source_operation: enterprises.devices.get (GET /v1/{name=enterprises/*/devices/*})
-  - name: execute_device_command
-    description: Execute a trait command on a device (e.g. set thermostat mode/temperature)
-    source_operation: enterprises.devices.executeCommand (POST /v1/{name=enterprises/*/devices/*}:executeCommand)
-  - name: list_structures
-    description: List the structures (homes) in the enterprise
-    source_operation: enterprises.structures.list (GET /v1/{parent=enterprises/*}/structures)
-  - name: get_structure
-    description: Get a single structure
-    source_operation: enterprises.structures.get (GET /v1/{name=enterprises/*/structures/*})
-  - name: list_rooms
-    description: List the rooms within a structure
-    source_operation: enterprises.structures.rooms.list (GET /v1/{parent=enterprises/*/structures/*}/rooms)
-  - name: get_room
-    description: Get a single room
-    source_operation: enterprises.structures.rooms.get (GET /v1/{name=enterprises/*/structures/*/rooms/*})
+- name: list_devices
+  description: List the Nest devices in an enterprise (Device Access project)
+  source_operation: enterprises.devices.list (GET /v1/{parent=enterprises/*}/devices)
+- name: get_device
+  description: Get a single Nest device including its traits
+  source_operation: enterprises.devices.get (GET /v1/{name=enterprises/*/devices/*})
+- name: execute_device_command
+  description: Execute a trait command on a device (e.g. set thermostat mode/temperature)
+  source_operation: enterprises.devices.executeCommand (POST /v1/{name=enterprises/*/devices/*}:executeCommand)
+- name: list_structures
+  description: List the structures (homes) in the enterprise
+  source_operation: enterprises.structures.list (GET /v1/{parent=enterprises/*}/structures)
+- name: get_structure
+  description: Get a single structure
+  source_operation: enterprises.structures.get (GET /v1/{name=enterprises/*/structures/*})
+- name: list_rooms
+  description: List the rooms within a structure
+  source_operation: enterprises.structures.rooms.list (GET /v1/{parent=enterprises/*/structures/*}/rooms)
+- name: get_room
+  description: Get a single room
+  source_operation: enterprises.structures.rooms.get (GET /v1/{name=enterprises/*/structures/*/rooms/*})
+deployment:
+  mode: none
+  verified: derived
+  tools: 7
+  checked: '2026-08-12'
+  source: catalog MCP census
