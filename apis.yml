@@ -80,6 +80,11 @@ apis:
   - type: Authentication
     url: authentication/nest-authentication.yml
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/google/
+  name: Google
+  x-relationship: acquired
+  x-evidence: "Nest is Google's smart home brand — thermostats, cameras, doorbells, and the Nest Hub — originally founded as Nest Labs (a Lightspeed Venture Partners portfolio company) and acquired by Google. Developers integrate with authorized Nest devi"
 - type: DomainSecurity
   url: security/nest-domain-security.yml
 - type: Website
