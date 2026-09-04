@@ -20,6 +20,7 @@ accessModel:
   confidence: medium
   source:
   - authentication
+  - {url: 'https://nest.com', status: 301, note: 'declared website redirects to https://store.google.com/us/category/connected_home?hl=en-US&GoogleNest&utm_source=nest_redirect&utm_medium=google_oo&utm_campaign=homepage — a different registrable domain (nest.com -> google.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/nest.png
@@ -125,8 +126,9 @@ common:
   url: lifecycle/nest-lifecycle.yml
 - type: Conformance
   url: conformance/nest-conformance.yml
-- type: MCPServer
+- type: X-MCPServerCandidate
   url: mcp/nest-mcp.yml
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 - type: Packages
   url: packages/nest-packages.yml
 - type: SDKs
